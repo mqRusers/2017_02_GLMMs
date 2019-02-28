@@ -1,0 +1,42 @@
+Jags - bayesian (gold standard)
+mcmcglmm (also good)
+lme4, nlme, jags (when possible use all three!)
+
+Assumptions
+- Absence of collinearity, 
+- normality of errors, 
+- independence, 
+- no influential data points, 
+- homoskedasticity of errors
+
+Repeated (seasonal?) measures at some sites- no longer completely independent
+Conditional independence
+
+LMM/GLMM can handle repeated measures and unblanced data, and crossed random effects
+GLMM can handle non-normally distributed response data. 
+
+Calculate correlation between slopes and intercepts. 
+
+
+linear regression : R~T  (respiration, temp)
+random intercept model: R~T+(1|site)
+slope and intercept correlated R~T+(T|site)
+
+Sources of convergence problems
+-not enough data
+-collinearity
+-predictors have vastly different scales (can usually be solved with a transformation of predictors)
+
+Solutions:
+- SImplify (drop a random slope)
+- Remove items with not enough data
+- lmerControl() (the 'optimizer') increase the number of iterations; last-ditch effort
+
+
+Random (categories distinct but interchangeable) vs. fixed effects (when you care about the identities of the categorical variables)
+
+Best method of model fitting is still debated
+
+
+
+
